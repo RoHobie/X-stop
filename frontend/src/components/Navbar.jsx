@@ -38,10 +38,10 @@ const Navbar = () => {
       {menuOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-stone shadow-lg z-50 font-semibold">
           <div className="flex flex-col items-center gap-5 py-6">
-            <p onClick={() => setMenuOpen(false)}>New</p>
-            <p onClick={() => setMenuOpen(false)}>Men</p>
-            <p onClick={() => setMenuOpen(false)}>Women</p>
-            <p onClick={() => setMenuOpen(false)}>Support</p>
+            <Link to="/new" onClick={() => setMenuOpen(false)}>New</Link>
+            <Link to="/men" onClick={() => setMenuOpen(false)}>Men</Link>
+            <Link to="/women" onClick={() => setMenuOpen(false)}>Women</Link>
+            <Link to="/support" onClick={() => setMenuOpen(false)}>Support</Link>
           </div>
         </div>
       )}

@@ -7,6 +7,7 @@ import Women from "./pages/Women.jsx";
 import Support from "./pages/Support.jsx";
 import New from "./pages/New.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import Footer from "./pages/Footer.jsx";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/new" element={<New />} />
 
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 };
