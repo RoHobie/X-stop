@@ -1,5 +1,5 @@
 import React from "react";
-import Basketball from '/client/src/assets/Basketball.png'
+import Basketball from '../assets/Basketball.png'
 
 export default function Hero() {
     return (
@@ -31,14 +31,14 @@ export default function Hero() {
                     {/* RIGHT IMAGE PLACEHOLDER */}
                     <div className="relative flex justify-center lg:justify-end">
                         {/* IMAGE PLACEHOLDER */}
-                        <div className="w-full max-w-md aspect-[3/4] bg-gray-200 rounded-xl flex items-center justify-center">
-              <span className="text-gray-500 text-lg">
-               <img
-                   src={Basketball}
-                   alt="Athlete"
-                   className="max-w-md w-full object-contain"
-               />
-              </span>
+                        <div className="w-full max-w-md aspect-[3/4] rounded-xl flex items-center justify-center">
+                            <span className="text-gray-500 text-lg">
+                                <img
+                                    src={Basketball}
+                                    alt="Athlete"
+                                    className="max-w-md w-full object-contain"
+                                />
+                            </span>
                         </div>
 
                         {/*
