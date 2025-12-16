@@ -9,6 +9,25 @@ const createToken = (id) => {
 
 const loginUser = async (req, res) => {
 
+    try {
+        const { email, password } = req.body;
+        // checking if user exist
+        const user = await userModel.findOne({ email });
+        if(!user){
+            return res.status(400).json({ message: 'Invalid email or password' });
+        }
+        // comparing password
+        const isMatch = await bcrypt.compare(password, user.password);
+        if(!isMatch){
+            return res.status(400).json({ message: 'Invalid email or password' });
+        }else{
+            const token = createToken(user._id);
+            res.json({ message: 'Login successful', user, token });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
 };
 
 const registerUser = async (req, res) => {
