@@ -12,7 +12,7 @@ const productRouter = express.Router();
 // Routes for product management
 productRouter.post('/add', upload.fields([{name:'image1',maxCount:1},{name:'image2',maxCount:1},{name:'image3',maxCount:1},{name:'image4',maxCount:1}]), addProduct);
 productRouter.get('/list', listProducts);
-productRouter.delete('/remove', removeProduct);
+productRouter.post('/remove', removeProduct); // changed from DELETE to POST to accept id in body
 productRouter.get('/info', getProductInfo);
 
 export default productRouter;
