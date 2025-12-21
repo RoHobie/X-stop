@@ -51,7 +51,13 @@ const addProduct = async (req, res) => {
 
 // function for list products
 const listProducts = async (req, res) => {
-
+    try {
+        const products = await productModel.find({});
+        res.json(products);
+    } catch (error) {
+        console.error('Error viewing product:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 }
 
 // function to remove a product
