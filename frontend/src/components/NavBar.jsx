@@ -59,6 +59,7 @@ const NavBar = () => {
             <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
               <p className="cursor-pointer hover:text-black">My Profile</p>
               <p onClick={()=> navigate('/orders')} className="cursor-pointer hover:text-black">Orders</p>
+              <p onClick={()=> navigate('/my-tickets')} className="cursor-pointer hover:text-black">My Tickets</p>
               <p onClick={logout} className="cursor-pointer hover:text-black">Logout</p>
             </div>
           </div>}

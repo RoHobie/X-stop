@@ -75,4 +75,19 @@ export const getTicketById = async (req, res) => {
   }
 };
 
+export const closeTicket = async (req, res) => {
+  try {
+    const ticket = await Ticket.findById(req.params.id);
+    if (!ticket) {
+      return res.status(404).json({ message: "Ticket not found" });
+    }
+
+    ticket.status = "closed";
+    await ticket.save();
+
+    res.json({ message: "Ticket closed successfully", ticket });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
